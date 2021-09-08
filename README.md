@@ -5,13 +5,31 @@
 * You can run the application with mvn clean install && mvn spring-boot:run
 * Here is a sample CURL 
 
-###### curl -X 'POST' \  'http://localhost:8080/currency-convertor/convert' \  -H 'accept: */*' \  -H 'Content-Type: application/json' \  -d '{  "from": "USD",  "to": "INR",  "amount": 10}'
+###### 
 
+```bash
+curl -X 'POST' \
+  'http://localhost:8080/currency-convertor/convert' \
+  -H 'accept: */*' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "from": "EUR",
+  "to": "USD",
+  "amount": 5.67
+}'
+```
 
-###### curl -X 'POST' \  'http://localhost:8080/currency-convertor/convert' \  -H 'accept: */*' \  -H 'Content-Type: application/json' \  -d '{  "from": "USD",  "to": "EUR",  "amount": 98}'
-
-
-
+```bash
+curl -X 'POST' \
+  'http://localhost:8080/currency-convertor/convert' \
+  -H 'accept: */*' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "from": "USD",
+  "to": "INR",
+  "amount": 10
+}'
+```
 
 
 Please find response screenshot added to root of this project as well.  
