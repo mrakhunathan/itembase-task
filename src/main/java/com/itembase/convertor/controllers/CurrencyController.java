@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.itembase.convertor.models.ConversionResponse;
-import com.itembase.convertor.models.ConvertorRequest;
+import com.itembase.convertor.models.ConversionRequest;
 import com.itembase.convertor.services.CurrencyConvertorService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -22,11 +22,10 @@ public class CurrencyController {
 	CurrencyConvertorService currencyConvertorService;
 
 	@PostMapping(value = "convert")
-	public ResponseEntity<Flux<ConversionResponse>> convert(@RequestBody ConvertorRequest convertorRequest) {
+	public ResponseEntity<Flux<ConversionResponse>> convert(@RequestBody ConversionRequest convertorRequest) {
 		try {
 			log.info("Converting {} {} to {}", convertorRequest.getAmount(), convertorRequest.getFrom(), convertorRequest.getTo());
-			Flux<ConversionResponse> response = currencyConvertorService.convertCurrency(convertorRequest);
-			return response != null ? new ResponseEntity<Flux<ConversionResponse>>(currencyConvertorService.convertCurrency(convertorRequest), HttpStatus.OK) : new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+			return currencyConvertorService.convertCurrency(convertorRequest);
 		} catch (Exception e) {
 			log.error(e.getMessage(), e);
 			return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);

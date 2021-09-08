@@ -1,5 +1,7 @@
 package com.itembase.convertor.models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,11 +11,11 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ConvertorRequest {
+public class CurrencyLayerResponse {
 
-	String from;
+	@JsonProperty("result")
+	double result;
 
-	String to;
-
-	double amount;
+	@JsonProperty("success")
+	boolean success;
 }
