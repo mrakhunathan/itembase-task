@@ -1,7 +1,7 @@
 # itembase-task
 
 ## Reference Documentation
-* Clone the project from Git, Make sure to have Java 11 and Maven on your path/classpath
+* Clone the project from Git (master branch), Make sure to have Java 11 and Maven on your path/classpath
 * You can run the application with mvn clean install && mvn spring-boot:run
 * Here is a sample CURL 
 
@@ -33,3 +33,6 @@ curl -X 'POST' \
 
 
 Please find response screenshot added to root of this project as well.  
+
+## Security - Bonus Task
+Added Security Configuration with Keycloak as Security Provider. Here only apis starting with api/v1 will be authorized. We can enable it by configuring keycloak credentials in application.properties file.
