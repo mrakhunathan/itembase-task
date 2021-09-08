@@ -1,8 +1,9 @@
 # itembase-task
 
 ## Reference Documentation
-* Clone the project from Git, Make sure to have Java 11 and Maven on your path/classpath
+* Clone the project from Git (master branch), Make sure to have Java 11 and Maven on your path/classpath
 * You can run the application with mvn clean install && mvn spring-boot:run
+* Swagger should be Loaded on http://localhost:8080/currency-convertor/swagger-ui/index.html
 * Here is a sample CURL 
 
 ###### 
