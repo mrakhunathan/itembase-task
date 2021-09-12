@@ -1,4 +1,4 @@
-# itembase-task
+# hatchways-assessment
 
 ## Reference Documentation
 * Clone the project from Git (master branch), Make sure to have Java 11 and Maven on your path/classpath
