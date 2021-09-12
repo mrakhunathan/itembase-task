@@ -1,4 +1,4 @@
-package com.itembase.convertor.models;
+package io.hatchways.convertor.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,11 +9,12 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ConversionRequest {
-
+public class ConversionResponse {
 	String from;
 
 	String to;
 
 	double amount;
+
+	double converted;
 }

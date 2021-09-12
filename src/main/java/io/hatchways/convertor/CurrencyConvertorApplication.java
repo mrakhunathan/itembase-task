@@ -1,4 +1,4 @@
-package com.itembase.convertor;
+package io.hatchways.convertor;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

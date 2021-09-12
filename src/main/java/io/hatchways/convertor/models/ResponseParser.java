@@ -1,4 +1,6 @@
-package com.itembase.convertor.models;
+package io.hatchways.convertor.models;
+
+import java.util.Map;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -11,11 +13,9 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class CurrencyLayerResponse {
+public class ResponseParser {
 
-	@JsonProperty("result")
-	double result;
+	@JsonProperty("rates")
+	Map<String, Double> rates;
 
-	@JsonProperty("success")
-	boolean success;
 }

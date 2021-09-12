@@ -1,4 +1,4 @@
-package com.itembase.convertor.controllers;
+package io.hatchways.convertor.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -7,12 +7,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.itembase.convertor.models.ConversionResponse;
-import com.itembase.convertor.models.ConversionRequest;
-import com.itembase.convertor.services.CurrencyConvertorService;
-
+import io.hatchways.convertor.models.ConversionRequest;
+import io.hatchways.convertor.models.ConversionResponse;
+import io.hatchways.convertor.services.CurrencyConvertorService;
 import lombok.extern.slf4j.Slf4j;
-import reactor.core.publisher.Flux;
 
 @RestController(value = "currency/")
 @Slf4j
@@ -22,7 +20,7 @@ public class CurrencyController {
 	CurrencyConvertorService currencyConvertorService;
 
 	@PostMapping(value = "convert")
-	public ResponseEntity<Flux<ConversionResponse>> convert(@RequestBody ConversionRequest convertorRequest) {
+	public ResponseEntity<ConversionResponse> convert(@RequestBody ConversionRequest convertorRequest) {
 		try {
 			log.info("Converting {} {} to {}", convertorRequest.getAmount(), convertorRequest.getFrom(), convertorRequest.getTo());
 			return currencyConvertorService.convertCurrency(convertorRequest);
